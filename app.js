@@ -10,7 +10,7 @@ export const options = {}
 
 export default async function (fastify, opts) {
   // Place here your custom code!
-  const port = process.env.PORT || 3000
+  
   // Do not touch the following lines
 
   // This loads all plugins defined in plugins
