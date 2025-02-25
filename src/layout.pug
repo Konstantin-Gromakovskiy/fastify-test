@@ -1,0 +1,16 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css')
+    body.d-flex.flex-column.justify-content-between.min-vh-100
+        header.bg-primary-subtle.shadow-sm.py-3
+            div.navbar.navbar-expand-xl.container.d-flex.gap-4.justify-content-center
+                a(href='/courses/' class='fs-6') Все курсы
+                a(href='/users/', class='fs-6') Пользователи
+        main.container.my-3.flex-grow-1
+            block content
+    footer.bg-light.py-3.shadow-sm
+        div.container.d-flex.justify-content-center
+            a(href='https://github.com/Konstantin-Gromakovskiy/Konstantin-Gromakovskiy/' target='_blank') Konstantin Gromakovskiy

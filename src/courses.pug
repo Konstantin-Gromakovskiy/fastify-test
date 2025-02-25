@@ -1,2 +1,14 @@
-h1 курсы
-p вот курсы
+extends ./layout
+
+block content
+    div.mb-5
+        form
+            label(for='course', class='form-label') Поиск по курсам
+            input(type='search', value=searchParam || '', autofocus=true, class='form-control', id='course', name='courses', placeholder='Название курса')
+
+    div
+        h2 Курсы
+        each course in courses
+            a(href=`/courses/${course.id}`, class='fs-3' )= course.title
+            p= course.description
+
