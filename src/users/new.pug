@@ -2,19 +2,21 @@ extends ./../layout
 
 block content
     div.d-flex.flex-column.align-content-center.container-sm.col-5.justify-content-center
-        h1.text-center Регистрация
+        h1.text-center.mb-3 Регистрация
+        if error
+            div.alert.alert-danger= error.message
         form(action = '/users/', method = 'post')
             div.mb-3
                 label.form-label(for = 'name') Имя:
-                input.form-control(type = 'text', name = 'name' id='name', required = true)
+                input.form-control(type = 'text', name = 'name' id='name', required = true value=name)
             div.mb-3
                 label.form-label(for='email') Email:
-                input.form-control(type = 'email', name = 'email', required = true id='email')
+                input.form-control(type = 'email', name = 'email', required = true id='email' value=email)
             div.mb-3
                 label.form-label(for='password') Пароль:
-                input.form-control(type = 'password', name = 'password', required = true id='password')
+                input.form-control(type = 'password', name = 'password', required = true id='password' value=password)
             div.mb-3
                 label.form-label(for='passwordConfirmation') Подтверждение пароля:
-                input.form-control(type = 'password', name = 'passwordConfirmation', required = true id='passwordConfirmation')
+                input.form-control(type = 'password', name = 'passwordConfirmation', required = true id='passwordConfirmation' value=passwordConfirmation)
             div.d-flex.justify-content-end
                 input.btn.btn-primary(type = 'submit', value = 'Зарегистрировать')
