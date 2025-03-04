@@ -1,13 +1,14 @@
 import state from "../testData/data.js";
 import _ from "lodash";
 import yup from "yup";
+import routes from "../routes.js";
 
 export default async function (fastify) {
-  fastify.get('/users/', async function (request, reply) {
+  fastify.get(routes.users(), async function (request, reply) {
     return reply.view('./src/users/users', {users: state.users})
   })
 
-  fastify.post('/users/', {
+  fastify.post(routes.users(), {
     attachValidation: true,
     schema: {
       body: yup.object({
@@ -44,7 +45,7 @@ export default async function (fastify) {
     reply.redirect('/users/')
   })
 
-  fastify.get('/users/new', async function (request, reply) {
+  fastify.get(routes.newUser(), async function (request, reply) {
     return reply.view('./src/users/new')
   })
 

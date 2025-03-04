@@ -4,4 +4,4 @@ block content
     div.d-flex.flex-column
         h1.text-center Пользователи
         each user in users
-            a(href=`/users/${user.id}`, class='fs-4' )= user.name
+            a(href=routes.user(user.id), class='fs-4' )= user.name

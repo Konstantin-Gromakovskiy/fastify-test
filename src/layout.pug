@@ -7,8 +7,9 @@ html(lang='en')
     body.d-flex.flex-column.justify-content-between.min-vh-100
         header.bg-primary-subtle.shadow-sm.py-3
             div.navbar.navbar-expand-xl.container.d-flex.gap-4.justify-content-center
-                a(href='/courses/' class='fs-6') Все курсы
-                a(href='/users/', class='fs-6') Пользователи
+                a(href=routes.courses() class='fs-6') Все курсы
+                a(href=routes.users(), class='fs-6') Пользователи
+                a(href=routes.newUser(), class='fs-6') Регистрация
         main.container.my-3.flex-grow-1
             block content
     footer.bg-light.py-3.shadow-sm
